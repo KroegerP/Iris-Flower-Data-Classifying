@@ -394,9 +394,7 @@ if __name__ == "__main__":
 
     print("\nUsing decision trees as ground truth\n")
     function_scoreList, roc_fpr, roc_tpr, accuracyScores, naive_predictions, naive_testing, naive_indicies = naive_bayes(id3_testing, id3_indicies)
-    plotAccuracyScores(accuracyScores)
     PlotFScore(function_scoreList)
-    PlotROCPairs(roc_fpr, roc_tpr)
 
     function_scoreList = [] # Reset the variables for reuse
     accuracyScores = []
@@ -405,6 +403,4 @@ if __name__ == "__main__":
 
     print("\nUsing naive bayes as ground truth\n")
     function_scoreList, roc_fpr, roc_tpr, accuracyScores, id3_predictions, id3_testing, id3_indicies = id3(naive_testing, naive_indicies) # Getting a single function score and ROC curve data per bin
-    plotAccuracyScores(accuracyScores)
     PlotFScore(function_scoreList)
-    PlotROCPairs(roc_fpr, roc_tpr)
